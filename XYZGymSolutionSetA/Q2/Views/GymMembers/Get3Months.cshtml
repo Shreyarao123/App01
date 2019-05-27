@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Q2.Models.GymMember>
+
+@{
+    ViewBag.Title = "Get3Months";
+}
+
+<h2>Get3Months</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShipStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberShipDuration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShipStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberShipDuration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberCode })
+        </td>
+    </tr>
+}
+
+</table>
